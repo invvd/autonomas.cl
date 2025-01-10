@@ -112,7 +112,7 @@
 				localStorage.theme === 'dark' ||
 				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 			) {
-				document.documentElement.classList.add('dark')
+				document.documentElement.classList.remove('dark')
 			} else {
 				document.documentElement.classList.remove('dark')
 			}
@@ -144,7 +144,7 @@
 			setupThemeSwitcher()
 		})
 	} else if (document.documentElement.classList.contains('mode-dark')) {
-		document.documentElement.classList.add('dark')
+		document.documentElement.classList.remove('dark')
 	} else if (document.documentElement.classList.contains('mode-light')) {
 		document.documentElement.classList.remove('dark')
 	}

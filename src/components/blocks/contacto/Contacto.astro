@@ -1,0 +1,50 @@
+---
+import Image from 'astro/components/Image.astro'
+import Section from '../../ui/Section.astro'
+---
+
+<script>
+	import Aos from 'aos'
+	Aos.init()
+</script>
+
+<Section id="contacto">
+	<div class="grid grid-cols-1 md:grid-cols-2">
+		<div>
+			<h2 class="text-center text-pink-600">Contáctanos</h2>
+			<form data-aos="fade-up" class="flex w-full flex-col items-center px-[0svw] text-center">
+				<input
+					class="h-10 w-full rounded-md bg-neutral-100 px-2 py-3 text-neutral-700 transition-all duration-200 focus-visible:px-4 focus-visible:py-5 focus-visible:outline-none"
+					placeholder="Nombre:"
+					type="text"
+					id="name"
+					name="name"
+					required
+				/>
+				<br />
+				<textarea
+					class="min-h-40 w-full rounded-md bg-neutral-100 px-2 py-3 text-neutral-700 transition-all duration-200 focus-visible:px-3 focus-visible:py-4 focus-visible:outline-none"
+					placeholder="Mensaje:"
+					id="message"
+					name="message"
+					required></textarea>
+				<br />
+				<button
+					class="w-full max-w-96 rounded-md bg-pink-600 py-2 text-white transition duration-200 hover:bg-pink-700"
+					type="submit">Enviar</button
+				>
+			</form>
+		</div>
+		<div class="relative hidden w-full items-center justify-center md:flex">
+			<Image
+				data-aos="fade-down"
+				class="size-auto"
+				alt="Autonomas"
+				width={600}
+				height={600}
+				src="/logo.png"
+				draggable={false}
+			/>
+		</div>
+	</div>
+</Section>

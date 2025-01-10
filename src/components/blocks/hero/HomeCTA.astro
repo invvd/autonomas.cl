@@ -9,48 +9,40 @@ import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 // - UI
-import ChipNotification from '../../ui/ChipNotification.astro'
-import { Image } from 'astro:assets'
 import Button from '../../ui/Button.astro'
-import AvatarGroup from '../../ui/AvatarGroup.astro'
+import { Image } from 'astro:assets'
 
 // Content
-// - Hero Image
-import heroImage from '../../../assets/hero-01.png'
-// - Avatars
-import user1 from '../../../assets/avatars/avatar-01.webp'
-import user2 from '../../../assets/avatars/avatar-02.webp'
-import user3 from '../../../assets/avatars/avatar-03.webp'
-const avatars = [
-	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
-	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
-	{ image: { src: user3.src, alt: 'user name' }, link: '/' }
-]
 ---
 
-<Section id="intro" padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
-	<Row>
+<Section id="intro" fullWidth padding="none" classes="z-10 bg-neutral-50">
+	<Row classes="py-44">
 		<Col span="2" />
+		<Image
+			draggable={false}
+			loading="eager"
+			height={5616}
+			width={3744}
+			alt="Portada de la página de inicio"
+			class="absolute left-0 top-0 h-full w-full object-cover opacity-50"
+			src="/main.webp"
+		/>
 		<Col span="8" align="center">
-			<ChipNotification radius="rounded-full" classes="mb-6">
-				<strong>30K+</strong> satisfied customers
-				<AvatarGroup avatars={avatars} radius="rounded-full" slot="button" />
-			</ChipNotification>
-			<h1>Enhance team <strong>performance</strong> with seamless integration</h1>
+			<h1 class="px-20 drop-shadow-2xl">
+				Comienza a ser <strong>Autónoma</strong> con nuestros cursos de conducción.
+			</h1>
 
-			<p class="pb-0 text-lg">Work smarter, not harder, with our innovative platform</p>
-			<Button size="lg" link="/">Get started for free</Button>
+			<p class="pb-0 text-lg drop-shadow-2xl">De mujeres, para mujeres.</p>
+			<Button size="lg" link="#Cursos">Inscríbete ahora!</Button>
 		</Col>
 		<Col span="2" />
 		<Col span="2" />
-		<Col span="8">
-			<Image
-				src={heroImage}
-				alt="Foxi. The tailwind astro theme"
-				class="translate-y-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
-				format="webp"
-			/></Col
-		>
 		<Col span="2" />
 	</Row>
 </Section>
+
+<style>
+	h4 {
+		text-align: center;
+	}
+</style>

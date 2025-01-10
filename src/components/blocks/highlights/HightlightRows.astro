@@ -5,79 +5,156 @@
 
 // Components
 // - UI
-import TextImage from '../basic/TextImage.astro'
-
-// Content
-import highlight01 from '../../../assets/highlights/highlight-01.svg'
-import highlight01mobile from '../../../assets/highlights/highlight-01-mobile.svg'
-import highlight02 from '../../../assets/highlights/highlight-02.svg'
-import highlight02mobile from '../../../assets/highlights/highlight-02-mobile.svg'
-import highlight03 from '../../../assets/highlights/highlight-03.svg'
-import highlight03mobile from '../../../assets/highlights/highlight-03-mobile.svg'
-import highlight04 from '../../../assets/highlights/highlight-04.svg'
-import highlight04mobile from '../../../assets/highlights/highlight-04-mobile.svg'
-
-type HighlightBlock = {
-	title: string
-	text: string
-	image: any
-	mobileImage?: any
-	imageWidth: number
-	imageHeight: number
-	imagePosition: 'left' | 'right'
-}
-const highlightBlocks: HighlightBlock[] = [
-	{
-		title: 'Complete Project <strong>Visibility</strong>',
-		text: 'Gain complete visibility into your projects and tasks with our comprehensive dashboard. Easily track progress, deadlines, and team performance at a glance. Our dashboard offers real-time project tracking',
-		image: highlight01,
-		imageWidth: highlight01.width,
-		imageHeight: highlight01.height,
-		mobileImage: highlight01mobile,
-		imagePosition: 'right'
-	},
-	{
-		title: 'Advanced <strong>Automation</strong> Tools',
-		text: 'Automate repetitive tasks and streamline your workflow with our advanced automation tools. Save time and reduce errors by leveraging automated task assignments, workflow templates, and seamless integration with popular apps and services.',
-		image: highlight02,
-		mobileImage: highlight02mobile,
-		imageWidth: highlight02.width,
-		imageHeight: highlight02.height,
-		imagePosition: 'left'
-	},
-	{
-		title: '<strong>Effective</strong> Team Collaboration',
-		text: 'Enhance team communication and collaboration with our seamless tools. Keep everyone on the same page and ensure efficient project execution through real-time messaging, shared document editing, and task comments. ',
-		image: highlight03,
-		mobileImage: highlight03mobile,
-		imageWidth: highlight03.width,
-		imageHeight: highlight03.height,
-		imagePosition: 'right'
-	},
-	{
-		title: 'Robust Data <strong>Security</strong>',
-		text: 'Protect your data with our robust security features. We prioritize your privacy and security to ensure that your information is always safe. With end-to-end encryption, role-based access control, and regular security audits.',
-		image: highlight04,
-		mobileImage: highlight04mobile,
-		imageWidth: highlight04.width,
-		imageHeight: highlight04.height,
-		imagePosition: 'left'
-	}
-]
+import { IconCircleCheck } from '@tabler/icons-react'
+import Section from '../../ui/Section.astro'
+import 'aos/dist/aos.css'
 ---
 
-{
-	highlightBlocks.map((highlight, key) => (
-		<TextImage
-			id={`highlight-${key}`}
-			title={highlight.title}
-			text={highlight.text}
-			image={highlight.image}
-			imageWidth={highlight.imageWidth}
-			imageHeight={highlight.imageHeight}
-			mobileImage={highlight.mobileImage}
-			imagePosition={highlight.imagePosition}
-			classes={key === 0 ? '!pb-0' : key === highlightBlocks.length - 1 ? '!pt-0' : '!py-0'}
-		/>
-	))
-}
+<script>
+	import AOS from 'aos'
+	AOS.init({ once: true, duration: 800 })
+</script>
+
+<Section id="cursos" classes="z-10 bg-neutral-50">
+	<h2 data-aos="fade-up" class="text-center">Nuestros Cursos</h2>
+	<div
+		class="scroll-animation m-auto grid grid-cols-1 place-items-center gap-14 px-10 xl:grid-cols-3"
+	>
+		<div
+			class="flex h-full w-fit flex-col items-center justify-evenly rounded-3xl bg-white px-14 py-10 shadow-xl"
+			data-aos="flip-left"
+		>
+			<h3 class="m-1 text-center">Programa Diurno</h3>
+			<span class="mb-2 text-gray-400">(08:00 hrs. - 16:00 hrs.)</span>
+			<span class="mb-5 text-center text-6xl font-bold text-primary-500">$229.000</span>
+			<ul class="space-y-1">
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Clases teóricas con PracticaTest.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Ruta personalizada según tu nivel de conducción.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>5 clases prácticas de 2 horas cada una.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Recogida de la alumna en su domicilio.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Regreso de la alumna a su domicilio.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Coordinación continua en línea.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Soporte en línea.</span>
+				</li>
+			</ul>
+			<a
+				class="mt-5 rounded-md border-2 border-solid border-primary-500 bg-primary-500 px-3 py-2 text-white transition duration-300 hover:scale-105 hover:border-primary-700 hover:bg-primary-700 hover:text-white"
+				href="/"
+			>
+				Agenda tu curso
+			</a>
+		</div>
+		<div
+			class="flex w-fit flex-col items-center justify-evenly rounded-3xl bg-white px-14 py-10 shadow-xl"
+			data-aos="flip-left"
+		>
+			<h3 class="m-1 text-center">Programa Vespertino</h3>
+			<span class="mb-2 text-gray-400">(16:00 hrs. - 23:00 hrs.)</span>
+			<span class="mb-5 text-center text-6xl font-bold text-primary-500">$269.000</span>
+			<ul class="space-y-1">
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Clases teóricas con PracticaTest.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Ruta personalizada según tu nivel de conducción.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>5 clases prácticas de 2 horas cada una.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Recogida de la alumna en su domicilio.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Regreso de la alumna a su domicilio.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Coordinación continua en línea.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Soporte en línea.</span>
+				</li>
+			</ul>
+			<a
+				class="mt-5 rounded-md border-2 border-solid border-primary-500 bg-primary-500 px-3 py-2 text-white transition duration-300 hover:scale-105 hover:border-primary-700 hover:bg-primary-700 hover:text-white"
+				href="/"
+			>
+				Agenda tu curso
+			</a>
+		</div>
+		<div
+			class="flex w-fit flex-col items-center justify-evenly rounded-3xl bg-white px-14 py-10 shadow-xl"
+			data-aos="flip-left"
+		>
+			<h3 class="m-1 text-center">Programa Sábados</h3>
+			<span class="mb-2 text-gray-400">(4 sábados al mes.)</span>
+			<span class="mb-5 text-center text-6xl font-bold text-primary-500">$295.000</span>
+			<ul class="space-y-1">
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Clases teóricas con PracticaTest.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Ruta personalizada según tu nivel de conducción.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>4 clases prácticas de 2.5 horas cada una.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Recogida de la alumna en su domicilio.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Regreso de la alumna a su domicilio.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Coordinación continua en línea.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>Soporte en línea.</span>
+				</li>
+				<li>
+					<IconCircleCheck className="mr-2 inline" />
+					<span>5 clases prácticas en simulador profesional de realidad virtual.</span>
+				</li>
+			</ul>
+			<a
+				class="mt-5 rounded-md border-2 border-solid border-primary-500 bg-primary-500 px-3 py-2 text-white transition duration-300 hover:scale-105 hover:border-primary-700 hover:bg-primary-700 hover:text-white"
+				href="/"
+			>
+				Agenda tu curso
+			</a>
+		</div>
+	</div>
+</Section>

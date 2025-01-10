@@ -6,24 +6,33 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/blocks/hero/HomeCTA.astro'
 import Features from '../components/blocks/features/FeatureCards.astro'
 import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
-import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
-import CTA from '../components/blocks/CTA/BasicDark.astro'
+import Cursos from '../components/blocks/highlights/HightlightRows.astro'
 
 // Content
 // - Testimonial background
-import testimonialBackground from '../assets/testimonial-bg-01.webp'
+import testimonialBackground from '/public/testimonials-bg.webp'
+import { IconBrandWhatsapp } from '@tabler/icons-react'
+import QuienesSomos from '../components/blocks/quienes-somos/QuienesSomos.astro'
+import Contacto from '../components/blocks/contacto/Contacto.astro'
 // - SEO
 const SEO = {
-	title: 'Foxi | Your Productivity Toolkit',
+	title: 'Autónomas | Driving Coach',
 	description:
-		'Foxi is a powerful productivity toolkit designed to enhance your workflow and boost your productivity. With features like analytics, security, and integrations, Foxi is the perfect solution for your business.'
+		'Autónomas surge como respuesta a la necesidad de seguridad, empatía y sororidad entre mujeres. Ahora, podrás confiar en que en Autónomas encontrarás un servicio diseñado y ofrecido exclusivamente por mujeres, para mujeres.'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero />
 	<Features />
+	<QuienesSomos />
 	<Testimonial bg={testimonialBackground} bgPosition="right" />
-	<HighlightBlocks />
-	<CTA />
+	<Cursos />
+	<Contacto />
+	<a
+		href="/"
+		class="fixed bottom-10 right-10 z-50 rounded-full bg-green-400 p-2 transition hover:scale-110"
+	>
+		<IconBrandWhatsapp stroke={1.8} className="size-12 text-white" />
+	</a>
 </Layout>

@@ -17,7 +17,7 @@ const { flex, mode, classes } = Astro.props
 ---
 
 <div
-	class:list={['row', { 'row--flex': flex }, { [`${classes}`]: classes }, { [`${mode}`]: mode }]}
+	class:list={['row', { 'row--flex': flex }, { [`${classes}`]: classes }, { [`${'light'}`]: mode }]}
 >
 	<slot />
 </div>

@@ -50,6 +50,11 @@ const {
 } = Astro.props
 ---
 
+<script>
+	import Aos from 'aos'
+	Aos.init()
+</script>
+
 <div
 	class:list={[
 		'testimonial',
@@ -59,14 +64,14 @@ const {
 		{ [`${classes}`]: classes }
 	]}
 >
-	<div class="testimonial__container">
+	<div class="testimonial__container text-white">
 		<figure class="testimonial__figure">
-			<blockquote class="testimonial__blockquote">
-				<p>
+			<blockquote data-aos="fade-up" class="testimonial__blockquote">
+				<p class="text-white">
 					{blockquote}
 				</p>
 			</blockquote>
-			<figcaption class="testimonial__figcaption">
+			<figcaption data-aos="fade" class="testimonial__figcaption">
 				{rating && <Rating rating={rating} />}
 				<div class="testimonial__figcaption-container">
 					{
@@ -94,7 +99,7 @@ const {
 		</figure>
 		<Icon
 			name="quotes"
-			class="testimonial--quote"
+			class="testimonial--quote opacity-20"
 			size={quoteSize}
 			width={quoteSize}
 			height={quoteSize}
@@ -110,7 +115,7 @@ const {
 		@apply text-center [&_.testimonial\_\_figcaption:has(.avatar)_.testimonial\_\_figcaption-cite-container]:text-left [&_.testimonial\_\_figcaption]:justify-center;
 	}
 	.testimonial--quote {
-		@apply absolute left-6 top-6 z-0 text-neutral-50 dark:text-neutral-50/15;
+		@apply absolute left-6 top-6 z-0 text-neutral-50;
 	}
 	.testimonial__container {
 		@apply relative p-6;
@@ -119,10 +124,10 @@ const {
 		@apply relative z-10;
 	}
 	.testimonial__blockquote {
-		@apply p-6 [&>p]:text-neutral-500 dark:[&>p]:text-neutral-300;
+		@apply p-6 [&>p]:text-white;
 	}
 	.testimonial__figcaption {
-		@apply flex flex-col items-center gap-4 p-6 pt-2 text-sm leading-normal text-neutral-700 dark:text-neutral-50;
+		@apply flex flex-col items-center gap-4 p-6 pt-2 text-sm leading-normal text-white;
 	}
 	.testimonial__figcaption-container {
 		@apply flex items-center gap-4 pt-4 text-sm;

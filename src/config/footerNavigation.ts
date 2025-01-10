@@ -9,7 +9,6 @@ export interface Logo {
 
 export interface FooterAbout {
 	title: string
-	aboutText: string
 	logo: Logo
 }
 
@@ -35,77 +34,46 @@ export interface FooterData {
 
 export const footerNavigationData: FooterData = {
 	footerAbout: {
-		title: 'Foxi.',
-		aboutText:
-			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
+		title: 'Autónomas',
 		logo: {
-			src: '/logo.svg',
-			alt: 'The tailwind astro theme',
-			text: 'Foxi.'
+			src: '/logo.png',
+			alt: 'Autónomas',
+			text: 'Autónomas'
 		}
 	},
 	footerColumns: [
 		{
-			category: 'Product',
+			category: 'Redes Sociales',
 			subCategories: [
 				{
-					subCategory: 'Features',
-					subCategoryLink: '/features'
+					subCategory: 'Instagram',
+					subCategoryLink: 'https://www.instagram.com/autonomascl/'
 				},
 				{
-					subCategory: 'FAQ',
-					subCategoryLink: '/faq'
+					subCategory: 'TikTok',
+					subCategoryLink: 'https://www.tiktok.com/@autonomas'
 				},
 				{
-					subCategory: 'Pricing',
-					subCategoryLink: '/pricing'
-				},
-				{
-					subCategory: 'Changelog',
-					subCategoryLink: '/changelog'
-				},
-				{
-					subCategory: 'Terms',
-					subCategoryLink: '/terms'
+					subCategory: 'Facebook',
+					subCategoryLink: 'https://www.facebook.com/AutonomasCL/?locale=es_LA'
 				}
 			]
 		},
 		{
-			category: 'About us',
+			category: 'Contacto',
 			subCategories: [
 				{
-					subCategory: 'About us',
-					subCategoryLink: '/'
+					subCategory: 'WhatsApp',
+					subCategoryLink: 'https://wa.me/56940740509'
 				},
 				{
-					subCategory: 'News',
-					subCategoryLink: '/blog'
-				},
-				{
-					subCategory: 'Careers',
-					subCategoryLink: '/blog'
-				}
-			]
-		},
-		{
-			category: 'Get in touch',
-			subCategories: [
-				{
-					subCategory: 'Contact',
-					subCategoryLink: '/contact'
-				},
-				{
-					subCategory: 'Support',
-					subCategoryLink: '/contact'
-				},
-				{
-					subCategory: 'Join us',
-					subCategoryLink: '/contact'
+					subCategory: 'Email',
+					subCategoryLink: 'mailto:info@autonomas.cl'
 				}
 			]
 		}
 	],
 	subFooter: {
-		copywriteText: '© Foxi 2024.'
+		copywriteText: '© Autónomas 2025'
 	}
 }
