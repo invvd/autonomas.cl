@@ -8,6 +8,21 @@ import Section from '../../ui/Section.astro'
 	Aos.init()
 </script>
 
+<script>
+	const handleSubmit = (e: SubmitEvent) => {
+		e.preventDefault()
+		const form = e.target as HTMLFormElement
+		const formData = new FormData(form)
+		const name = formData.get('name')
+		const msg = formData.get('message')
+		const waLink = `https://wa.me/56952043000?text=${encodeURIComponent(`${msg}`)}`
+		window.open(waLink, '_blank')
+	}
+
+	const form = document.getElementById('contactForm')
+	form?.addEventListener('submit', handleSubmit)
+</script>
+
 <Section id="contacto">
 	<div class="grid grid-cols-1 md:grid-cols-2">
 		<div>
