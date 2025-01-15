@@ -64,7 +64,7 @@ export const footerNavigationData: FooterData = {
 			subCategories: [
 				{
 					subCategory: 'WhatsApp',
-					subCategoryLink: 'https://wa.me/56940740509'
+					subCategoryLink: 'https://wa.me/56952043000'
 				},
 				{
 					subCategory: 'Email',
