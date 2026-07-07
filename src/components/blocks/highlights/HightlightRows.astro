@@ -7,7 +7,60 @@
 // - UI
 import { IconCircleCheck } from '@tabler/icons-react'
 import Section from '../../ui/Section.astro'
+import { WHATSAPP_NUMBER } from '../../../config'
 import 'aos/dist/aos.css'
+
+const PLANES = [
+	{
+		titulo: 'Programa Diurno',
+		horario: '8:00 hrs. - 16:00 hrs.',
+		precio: 239000,
+		bulletPoints: [
+			'Clases teóricas con PracticaTest.',
+			'Ruta personalizada según tu nivel de conducción.',
+			'5 clases prácticas de 2 horas cada una.',
+			'Recogida de la alumna en su domicilio.',
+			'Regreso de la alumna a su domicilio.',
+			'Coordinación continua en línea.',
+			'Soporte en línea.'
+		]
+	},
+	{
+		titulo: 'Programa Vespertino',
+		horario: '16:00 hrs. - 23:00 hrs.',
+		precio: 279000,
+		bulletPoints: [
+			'Clases teóricas con PracticaTest.',
+			'Ruta personalizada según tu nivel de conducción.',
+			'5 clases prácticas de 2 horas cada una.',
+			'Recogida de la alumna en su domicilio.',
+			'Regreso de la alumna a su domicilio.',
+			'Coordinación continua en línea.',
+			'Soporte en línea.'
+		]
+	},
+	{
+		titulo: 'Programa Sábados',
+		horario: '4 sábados al mes.',
+		precio: 305000,
+		bulletPoints: [
+			'Clases teóricas con PracticaTest.',
+			'Ruta personalizada según tu nivel de conducción.',
+			'4 clases prácticas de 2.5 horas cada una.',
+			'Recogida de la alumna en su domicilio.',
+			'Regreso de la alumna a su domicilio.',
+			'Coordinación continua en línea.',
+			'Soporte en línea.',
+			'5 clases prácticas en simulador profesional de realidad virtual.'
+		]
+	}
+]
+
+const clpFormatter = new Intl.NumberFormat('es-CL', {
+	style: 'currency',
+	currency: 'CLP',
+	minimumFractionDigits: 0 // CLP does not use decimals
+})
 ---
 
 <script>
@@ -20,141 +73,39 @@ import 'aos/dist/aos.css'
 	<div
 		class="scroll-animation m-auto grid grid-cols-1 place-items-center gap-14 px-10 xl:grid-cols-3"
 	>
-		<div
-			class="flex h-full w-fit max-w-[80vw] flex-col items-center justify-evenly rounded-3xl bg-white px-14 py-10 shadow-xl"
-			data-aos="flip-left"
-		>
-			<h3 class="m-1 text-center">Programa Diurno</h3>
-			<span class="mb-2 text-gray-400">(08:00 hrs. - 16:00 hrs.)</span>
-			<span class="mb-5 text-center text-5xl font-bold text-primary-500">$229.000</span>
-			<ul class="space-y-1">
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Clases teóricas con PracticaTest.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Ruta personalizada según tu nivel de conducción.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>5 clases prácticas de 2 horas cada una.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Recogida de la alumna en su domicilio.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Regreso de la alumna a su domicilio.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Coordinación continua en línea.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Soporte en línea.</span>
-				</li>
-			</ul>
-			<a
-				class="mt-5 rounded-md border-2 border-solid border-primary-500 bg-primary-500 px-3 py-2 text-white transition duration-300 hover:scale-105 hover:border-primary-700 hover:bg-primary-700 hover:text-white"
-				href="https://wa.me/56952043000?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20mis%20clases%20para%20el%20programa%20diurno."
-			>
-				Agenda tu curso
-			</a>
-		</div>
-		<div
-			class="flex w-fit max-w-[80vw] flex-col items-center justify-evenly rounded-3xl bg-white px-14 py-10 shadow-xl"
-			data-aos="flip-left"
-		>
-			<h3 class="m-1 text-center">Programa Vespertino</h3>
-			<span class="mb-2 text-gray-400">(16:00 hrs. - 23:00 hrs.)</span>
-			<span class="mb-5 text-center text-5xl font-bold text-primary-500">$269.000</span>
-			<ul class="space-y-1">
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Clases teóricas con PracticaTest.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Ruta personalizada según tu nivel de conducción.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>5 clases prácticas de 2 horas cada una.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Recogida de la alumna en su domicilio.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Regreso de la alumna a su domicilio.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Coordinación continua en línea.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Soporte en línea.</span>
-				</li>
-			</ul>
-			<a
-				class="mt-5 rounded-md border-2 border-solid border-primary-500 bg-primary-500 px-3 py-2 text-white transition duration-300 hover:scale-105 hover:border-primary-700 hover:bg-primary-700 hover:text-white"
-				href="https://wa.me/56952043000?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20mis%20clases%20para%20el%20programa%20vespertino."
-			>
-				Agenda tu curso
-			</a>
-		</div>
-		<div
-			class="flex w-fit max-w-[80vw] flex-col items-center justify-evenly rounded-3xl bg-white px-14 py-10 shadow-xl"
-			data-aos="flip-left"
-		>
-			<h3 class="m-1 text-center">Programa Sábados</h3>
-			<span class="mb-2 text-gray-400">(4 sábados al mes.)</span>
-			<span class="mb-5 text-center text-5xl font-bold text-primary-500">$295.000</span>
-			<ul class="space-y-1">
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Clases teóricas con PracticaTest.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Ruta personalizada según tu nivel de conducción.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>4 clases prácticas de 2.5 horas cada una.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Recogida de la alumna en su domicilio.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Regreso de la alumna a su domicilio.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Coordinación continua en línea.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>Soporte en línea.</span>
-				</li>
-				<li>
-					<IconCircleCheck className="mr-2 inline" />
-					<span>5 clases prácticas en simulador profesional de realidad virtual.</span>
-				</li>
-			</ul>
-			<a
-				class="mt-5 rounded-md border-2 border-solid border-primary-500 bg-primary-500 px-3 py-2 text-white transition duration-300 hover:scale-105 hover:border-primary-700 hover:bg-primary-700 hover:text-white"
-				href="https://wa.me/56952043000?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20mis%20clases%20para%20el%20programa%20sábados."
-			>
-				Agenda tu curso
-			</a>
-		</div>
+		{
+			PLANES.map((plan) => (
+				<div
+					class="flex h-full w-fit max-w-[80vw] flex-col items-center justify-evenly rounded-3xl bg-white px-14 py-10 shadow-xl"
+					data-aos="flip-left"
+				>
+					<h3 class="m-1 text-center">{plan.titulo}</h3>
+					<span class="mb-2 text-gray-400">({plan.horario})</span>
+					<span class="mb-5 text-center text-5xl font-bold text-primary-500">
+						{clpFormatter.format(plan.precio)}
+					</span>
+					<ul class="space-y-1">
+						{plan.bulletPoints.map((bp) => (
+							<li>
+								<IconCircleCheck className="mr-2 inline" />
+								<span>{bp}</span>
+							</li>
+						))}
+					</ul>
+					<a
+						class="mt-5 rounded-md border-2 border-solid border-primary-500 bg-primary-500 px-3 py-2 text-white transition duration-300 hover:scale-105 hover:border-primary-700 hover:bg-primary-700 hover:text-white"
+						target="_blank"
+						href={
+							'https://wa.me/' +
+							WHATSAPP_NUMBER +
+							'?text=' +
+							encodeURI('Hola, me gustaría agendar mis clases de ' + plan.titulo)
+						}
+					>
+						Agenda tu curso
+					</a>
+				</div>
+			))
+		}
 	</div>
 </Section>
