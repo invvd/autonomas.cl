@@ -10,7 +10,6 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: "https://autonomas.cl/",
-  adapter: vercel(),
   integrations: [tailwind(), icon(), sitemap(), partytown({
     config: {
       forward: ["dataLayer.push"],
